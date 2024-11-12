@@ -1,0 +1,34 @@
+﻿@model IEnumerable<TP4_salmen.Models.School>
+
+@{
+    ViewData["Title"] = "Schools";
+}
+
+<h1>Schools</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Add New School</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>School Name</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var school in Model)
+        {
+            <tr>
+                <td>@school.SchoolName</td>
+                <td>@school.SchoolAddress</td>
+                <td>
+                    <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@school.SchoolID">Edit</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@school.SchoolID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Accueil";
+}
+
+<div class="container mt-5">
+    <div class="jumbotron text-center bg-light p-5 rounded">
+        <h1 class="display-4">Bienvenue dans le système de gestion des étudiants</h1>
+        <hr class="my-4">
+        <p>Utilisez les options de recherche et de filtrage ci-dessous pour trouver des étudiants spécifiques ou voir tous les étudiants.</p>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+            <form asp-action="Search" asp-controller="Student" method="get" class="form-inline">
+                <div class="input-group mb-3 w-100">
+                    <input type="text" name="name" class="form-control" placeholder="Rechercher par nom..." size="30" aria-label="Rechercher par nom">
+
+                    <select asp-items="ViewBag.SchoolID" name="schoolid" class="form-control" style="width: 200px;" aria-label="Sélectionner une école">
+                        <option value="">Toutes les écoles</option>
+                    </select>
+
+                    <button class="btn btn-success" type="submit" aria-label="Recherche">
+                        <i class="fas fa-search"></i> Rechercher
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        <a asp-action="Index" asp-controller="Student" class="btn btn-primary">
+            <i class="fas fa-users"></i> Voir tous les étudiants
+        </a>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+﻿@model TP4_salmen.Models.School
+
+@{
+    ViewData["Title"] = "Create School";
+}
+
+<h2>Create School</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="SchoolName"></label>
+        <input asp-for="SchoolName" class="form-control" />
+        <span asp-validation-for="SchoolName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SchoolAddress"></label>
+        <input asp-for="SchoolAddress" class="form-control" />
+        <span asp-validation-for="SchoolAddress" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
